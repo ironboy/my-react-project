@@ -1,5 +1,21 @@
+import useFetchJson from "./utils/useFetchJson";
+
+interface User {
+  id: number;
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+}
+
 export default function App() {
+
+  const users = useFetchJson<User[]>('/json/users.json');
+
   return <>
-    <h1>Hello World!</h1>
+    {users?.map(({ firstName }, i) => <h3 key={i}>
+      {firstName}
+    </h3>)}
   </>;
+
 }
