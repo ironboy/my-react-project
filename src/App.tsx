@@ -1,5 +1,7 @@
+import Greeter from "./Greeter";
+
 export default function App() {
   return <>
-    <h1>Hello World!</h1>
+    <Greeter />
   </>;
 }
