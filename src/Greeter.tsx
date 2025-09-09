@@ -1,6 +1,6 @@
 export default function Greeter(
-  { greeting, setGreeting, name }:
-    { greeting: string; setGreeting: Function, name: string; }
+  { greeting, setGreeting, names }:
+    { greeting: string; setGreeting: Function, names: string; }
 ) {
 
   const greetings = [
@@ -18,6 +18,8 @@ export default function Greeter(
         onClick={() => setGreeting(greeting)}
       >{greeting}</button>)}
     </p>
-    <h1>{greeting} {name}!</h1>
+    {names.split(',').map((name, i) => <h1 key={i}>
+      {greeting} {name}!
+    </h1>)}
   </>;
 }
